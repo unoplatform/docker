@@ -14,3 +14,8 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && \
 	libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 \
 	libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 \
 	libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+
+# Workaround for https://github.com/dotnet/sdk/issues/11108
+RUN cd /usr/share/dotnet/sdk/3.1.201/Sdks/Microsoft.NET.Sdk.WindowsDesktop/targets && \
+	mv Microsoft.WinFx.props Microsoft.WinFX.props && \
+	mv Microsoft.WinFx.targets Microsoft.WinFX.targets
