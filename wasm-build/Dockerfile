@@ -4,7 +4,8 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" 
 RUN apt-get update
 
 # Install mono, msbuild and dependencies
-RUN apt-get -y install sudo unzip python mono-devel msbuild libc6 ninja-build
+RUN apt-get -y install sudo unzip python python3.7 mono-devel msbuild libc6 ninja-build && \
+    ln -sf /usr/bin/python3.7 /usr/bin/python3
 
 # Install node and puppeteer dependencies
 RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && \
