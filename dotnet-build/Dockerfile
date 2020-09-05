@@ -4,7 +4,7 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" 
 RUN apt-get update
 
 # Install mono, msbuild and dependencies
-RUN apt-get -y install sudo unzip python3.7 mono-devel msbuild libc6 ninja-build gcc zip
+RUN apt-get -y install sudo unzip python-is-python3 mono-devel msbuild libc6 ninja-build gcc zip
 
 # Install ARM cross-compilers
 RUN apt-get -y install g++ g++-arm-linux-gnueabi g++-arm-linux-gnueabihf gcc-arm-linux-gnueabihf \
