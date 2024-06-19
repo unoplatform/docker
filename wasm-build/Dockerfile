@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0.101-jammy
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy
 RUN apt-get update
 RUN apt-get -y install gnupg2
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
